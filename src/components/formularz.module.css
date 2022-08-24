@@ -1,0 +1,17 @@
+body{
+    margin:0;
+    padding: 0;
+    text-align: center;
+}
+
+label {
+    margin-right: 10px;
+}
+input {
+    margin-bottom: 10px;
+}
+
+.btnPrimary {
+    background-color: rgb(55, 55, 243);
+    color:#fff;
+}
