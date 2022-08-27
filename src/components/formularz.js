@@ -1,16 +1,19 @@
 import React, { useRef, useState } from 'react';
 import style from './formularz.module.css';
 function FormComp(){
-    const [ email, setEmail ] = useState('');
+    const [ email, setEmail ] = useState(true);
     const [ password, setPassword] = useState('');
-    const [ repassword, setRePassword] = useState('');
     const dataB = ['mat@onet.pl', 'mati@onet.pl'];
     const emailForm = useRef();
     const pass = useRef();
     const repass = useRef();
     const nameErrorRef = useRef();
     const emailErrorRef = useRef();
-    const isEmail = useRef();
+    const hEmail = ( event ) => {
+        const inData = dataB.indexOf(emailForm.current.value) === -1 ? false: true;
+        if (inData===false){
+            setEmail(false);
+        }}
     const handleSubmit = (event) => {
         event.preventDefault();
         const regSmall = new RegExp('[a-z]');
@@ -48,7 +51,6 @@ function FormComp(){
         const isEMok = dataB.indexOf(emailForm.current.value) === -1 ? false: true;
         if (isEMok===false){
             dataB.push(emailForm.current.value);
-            console.log(isEMok, dataB);
         }
         console.log(regValue1, isEMok);
     }
@@ -57,12 +59,12 @@ function FormComp(){
         <div className='form'>
             <form onSubmit={handleSubmit}>
                 <h4>Email:</h4>
-                <input ref={emailForm} onChange={(e)=>setEmail(e.target.value)} name="email" type="text" />
+                <input ref={emailForm} onBlur={hEmail} name="email" type="text" />
                 <h4>Hasło:</h4>
-                <input ref={pass} name="password" type="text" />
+                <input ref={pass} name="password" type="text" disabled={email} />
                 <p ref={nameErrorRef}></p>
                 <h4>powtórz hasło:</h4>
-                <input ref={repass} name="repass" type="text" />
+                <input ref={repass} name="repass" type="text"  disabled={email} />
                 <p ref={emailErrorRef}></p>
                 <h4>Wyślij formularz</h4>
                 <button type="send" >Wyślij</button>
