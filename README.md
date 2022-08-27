@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+Zadanie o treści:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+. Rejestracja konta użytkownika
+Przygotuj formularz, który będzie służył do zakładania konta użytkownika. Niech formularz składa się z 3 pól:
 
-## Available Scripts
+e-mail
 
-In the project directory, you can run:
+hasło
 
-### `npm start`
+potwierdź hasło
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+ 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Logika, jaka za tym stoi powinna sprawdzać, czy wprowadzone hasło:
 
-### `npm test`
+zawiera co najmniej jedną małą literę
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+zwiera co najmniej jedną dużą literę
 
-### `npm run build`
+zawiera co najmniej jedną liczbę
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+zawiera co najmniej jeden znak specjalny (np. # $ %)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+jego długość to co najmniej 8 znaków
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+ 
 
-### `npm run eject`
+Jeśli hasło nie spełnia poniższych kryteriów wyświetl o tym informacje w postaci:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+v hasło zawiera co najmniej jedną małą literę
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+x hasło nie zawiera przynajmniej jednej dużej litery
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+v hasło zawiera co najmniej jedną liczbę
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+x hasło nie zawiera znaków specjalnych
 
-## Learn More
+x hasło powinno składać się z co najmniej 8 znaków
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+ 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Pole "potwierdź hasło" służy do sprawdzenia, czy w tym polu wprowadziliśmy takie samo hasło jak w polu poprzednim.
 
-### Code Splitting
+ 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Walidacja:
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Po kliknięciu przycisku submit niech aplikacja sprawdzi, czy w bazie istnieje użytkownik o podanym adresie e-mail. Ponieważ nie mieliśmy jeszcze mockowania, to możemy zasymulować w aplikacji, że łączymy się za backendem i otrzymujemy odpowiedź, czyli np. wprowadzić gdzieś na sztywno taką informację w kodzie aplikacji.
